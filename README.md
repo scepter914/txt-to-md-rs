@@ -1,10 +1,10 @@
 # txt_to_md
 
-This repository is converter from txt files to markdown file.
+This repository `txt_to_md` is the convert CLI from txt files to markdown file.
 
 ## Get started
 
-- install
+- Install
 
 ```
 cargo install txt_to_md
@@ -80,8 +80,10 @@ jjj
 
 ## History
 
+- For next release
+  - Updated README
 - 0.1.1
-  - Fix README
+  - Updated README
 - 0.1.0
   - Release first prototype
 
