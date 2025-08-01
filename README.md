@@ -25,15 +25,19 @@ ggg
 hhh
 iii
 jjj
+
+- kkk
+  - lll
+  - mmm
 ```
 
 - Run
 
 ```
-txt_to_md -i text.txt -o output.md
+txt_to_md text.txt
 ```
 
-- output.md
+- See output.md
 
 ```md
 ## a
@@ -47,6 +51,9 @@ txt_to_md -i text.txt -o output.md
   - hhh
   - iii
   - jjj
+- kkk
+  - lll
+  - mmm
 ```
 
 ## Option
@@ -64,7 +71,6 @@ txt_to_md -h
 ## a
 ### bb
 
-
 - ccc
 
 ddd
@@ -76,14 +82,20 @@ fff
 hhh
 iii
 jjj
+
+- kkk
+  - lll
+  - mmm
+
 ```
 
 ## History
 
 - For next release
+- 0.1.2
+  - Add handling with mixed both markdown and raw text
   - Updated README
 - 0.1.1
   - Updated README
 - 0.1.0
   - Release first prototype
-

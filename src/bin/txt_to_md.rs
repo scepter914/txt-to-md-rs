@@ -9,7 +9,7 @@ use std::io::{BufRead, BufReader};
 
 #[derive(Parser, Debug)]
 struct Args {
-    #[clap(short, long, help = "The path to input text.")]
+    #[clap(index = 1, help = "The path to input text.")]
     input: String,
 
     #[clap(
@@ -40,14 +40,20 @@ struct Config {
 }
 
 fn parse_body(line_text: String, is_blank_line: bool, config: &Config) -> String {
-    if config.is_plane_text == true {
-        if is_blank_line == true {
+    // If starting with "-" or "  -", then not format
+    let trimmed = line_text.trim_start();
+    if trimmed.starts_with('-') {
+        return line_text.to_string();
+    }
+
+    if config.is_plane_text {
+        if is_blank_line {
             format!("\n- {}\n", line_text)
         } else {
-            format!("{}", line_text)
+            line_text.to_string()
         }
     } else {
-        if is_blank_line == true {
+        if is_blank_line {
             format!("- {}", line_text)
         } else {
             format!("  - {}", line_text)
