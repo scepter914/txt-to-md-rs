@@ -1,6 +1,6 @@
 [package]
 name = "txt_to_md"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 description = "Command converting from a txt file to a markdown file"
 keywords = ["markdown", "text"]
@@ -10,8 +10,8 @@ license = "MIT"
 readme = "README.md"
 
 [dependencies]
-carrot_utils = "0.1.3"
-log = "0.4.25"
-serde_derive = "1.0.200"
-serde = "1.0.200"
-clap = { version = "4.5.30", features = ["derive"] }
+log = "0.4.27"
+clap = { version = "4.5.43", features = ["derive"] }
+serde_derive = "1.0.219"
+serde = "1.0.219"
+env_logger = "0.11.8"

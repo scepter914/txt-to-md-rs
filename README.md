@@ -3,16 +3,35 @@
 This repository `txt_to_md` is the convert CLI from txt files to markdown file.
 
 ## Get started
-
-- Install
+### Install
 
 ```
 cargo install txt_to_md
 ```
 
+### Run
+
+- Run
+
+```sh
+txt_to_md "
+ccc
+ddd
+eee
+fff
+
+ggg
+hhh
+iii
+jjj
+"
+```
+
+### Run and make file
+
 - Prepare text.txt
 
-```
+```md
 ## a
 ### bb
 
@@ -33,8 +52,8 @@ jjj
 
 - Run
 
-```
-txt_to_md text.txt
+```sh
+txt_to_md -i text.txt -o output.md
 ```
 
 - See output.md
@@ -89,9 +108,16 @@ jjj
 
 ```
 
+- Local use
+
+```sh
+cargo run --release --bin txt_to_md -- -i in.txt
+```
+
 ## History
 
-- For next release
+- 0.1.3
+  - Refactoring
 - 0.1.2
   - Add handling with mixed both markdown and raw text
   - Updated README
