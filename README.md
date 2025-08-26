@@ -116,6 +116,8 @@ cargo run --release --bin txt_to_md -- -i in.txt
 
 ## History
 
+- 0.2.0
+  - Fix empty lines and release as newer version
 - 0.1.3
   - Refactoring
 - 0.1.2

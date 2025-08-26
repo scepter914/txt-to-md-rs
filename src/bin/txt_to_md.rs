@@ -139,10 +139,26 @@ fn convert_text_to_md(input: &str, is_plane_text: bool) -> String {
         // Use existed markdown line
         if is_markdown_line(trimmed) {
             flush_buf(&mut out, &mut buf);
+
+            let prev_is_blank = out.last().map_or(false, |s| s.trim().is_empty());
+            let prev_non_empty_is_heading = last_non_empty_is_heading(&out);
+            let is_heading = trimmed.starts_with('#');
+
+            if is_heading {
+                // If the before line is not empty and not headline, add empty line
+                if !out.is_empty() && !prev_is_blank && !prev_non_empty_is_heading {
+                    out.push(String::new());
+                }
+            } else {
+                // If the before line is headline add empty line
+                if !prev_is_blank && prev_non_empty_is_heading {
+                    out.push(String::new());
+                }
+            }
+
             out.push(line);
             continue;
         }
-
         // Plain lines go into the paragraph buffer.
         buf.push(line);
     }
